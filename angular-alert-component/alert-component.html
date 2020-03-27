@@ -1,0 +1,14 @@
+<div
+  *ngIf="showAlertMessage" id="errorBanner" class="main-error"
+  [class.redAlert]="isRedAlert" [class.yellowAlert]="isWarningAlert" [class.greenAlert]="!isRedAlert && !isWarningAlert"
+>
+  <span class="error-img-responsive warn warning" *ngIf="isRedAlert"></span>
+  <span class="error-img-responsive warn warning"  *ngIf="isWarningAlert" ></span>
+  <span class="error-img-responsive checkmark" *ngIf="!isRedAlert && !isWarningAlert" ></span>
+ 
+  <div id="errorMsg" class="errormsg">{{alertMessage}}</div>
+
+  <div (click)="closeAlert()" class="button-style">
+      <span class="error-img-close close"></span>
+  </div>
+</div>
